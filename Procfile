@@ -1,0 +1,1 @@
+web: gunicorn multiapps_project.wsgi
