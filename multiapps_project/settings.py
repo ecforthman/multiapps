@@ -131,7 +131,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, 'static'),
 ]
-
+print(BASE_DIR)
+print(PROJECT_ROOT)
+print(STATICFILES_DIRS)
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
