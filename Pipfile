@@ -11,6 +11,7 @@ django = "==2.2"
 psycopg2-binary = "*"
 gunicorn = "*"
 django-heroku = "*"
+django-crispy-forms = "*"
 
 [requires]
 python_version = "3.7.6"
