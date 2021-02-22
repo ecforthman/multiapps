@@ -5,7 +5,7 @@ from .views import (
     ArticleUpdateView, 
     ArticleDetailView, 
     ArticleDeleteView, 
-    ArticleCreateView, 
+    ArticleCreateView,     
 )
 
 urlpatterns = [

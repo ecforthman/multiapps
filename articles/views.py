@@ -3,16 +3,20 @@ from django.contrib.auth.mixins import (
     UserPassesTestMixin     
 )
 from django.views.generic import ListView, DetailView 
-from django.views.generic.edit import UpdateView, DeleteView, CreateView 
-from django.urls import reverse_lazy 
+from django.views.generic.edit import UpdateView, DeleteView, CreateView, FormView 
+from django.urls import reverse_lazy     
 from .models import Article
+
+
+from django.shortcuts import get_object_or_404, render, redirect 
+from django.http import request
 
 
 class ArticleListView(ListView):
     model = Article
     template_name = 'article_list.html'
     
-class ArticleDetailView(LoginRequiredMixin, DetailView): 
+class ArticleDetailView(DetailView): 
     model = Article
     template_name = 'article_detail.html'
     login_url = 'login'
@@ -47,3 +51,7 @@ class ArticleCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form): # new
         form.instance.author = self.request.user
         return super().form_valid(form)
+ 
+
+
+
