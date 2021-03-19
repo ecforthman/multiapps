@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Delete</h1>
-  <form action="" method="post">{% csrf_token %}
+  <h2 class="overlayTextProps" >Delete</h2>
+  <form class="formClass" action="" method="post">{% csrf_token %}
     <p><h4>Are you sure you want to delete "{{ article.title }}"?</h4></p>
     <button class="btn btn-danger ml-2" type="submit">Confirm</button>
-  </form>
-  <p><h4>Or go back to <a href="{% url 'article_list' %}">All Articles</a>.</h4></p>
+    <a class="btn btn-primary" href="{% url 'article_list' %}" role="button">Back to All Articles</a>
+  </form> 
 {% endblock content %}

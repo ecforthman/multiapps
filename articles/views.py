@@ -5,11 +5,11 @@ from django.contrib.auth.mixins import (
 from django.views.generic import ListView, DetailView 
 from django.views.generic.edit import UpdateView, DeleteView, CreateView, FormView 
 from django.urls import reverse_lazy     
-from .models import Article
-
+from .models import Article, Comment
+from .forms import CommentForm
 
 from django.shortcuts import get_object_or_404, render, redirect 
-from django.http import request
+from django.http import request, QueryDict
 
 
 class ArticleListView(ListView):
@@ -52,6 +52,18 @@ class ArticleCreateView(LoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
+# Comment views
 
+class CommentListView(ListView):
+    model = Comment
+    template_name = 'comment_list.html'
 
-
+class CommentCreateView(LoginRequiredMixin, CreateView): 
+    model = Comment
+    template_name = 'comment_new.html'
+    fields = ('article', 'comment',) 
+    login_url = 'login'
+    
+    def form_valid(self, form): # new
+        form.instance.author = self.request.user
+        return super().form_valid(form)

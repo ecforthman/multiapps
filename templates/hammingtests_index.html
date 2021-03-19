@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+<h3>Hamming Tests</h3>
+
+<p class="lead">The dynamic piece of this demonstration consists of the input of two strings 
+to a form that are submitted for evaluation, the result is returned and saved
+to a database. This result is a hamming distance. The last five results may be 
+viewed, simultaneously.</p>
+
+<p class="lead">A hamming distance is a position by position comparision of two
+equal length strings with the resulting sum being the number of non-matching 
+values. The strings can be any sequence of characters or numbers. The concept of 
+a hamming distance was introduced in 1950 by Richard Hamming in his paper 
+<i>Error detecting and error correcting codes.</i></p>
+<p class="lead">
+    <a class="btn btn-primary btn-lg" href="{% url 'home' %}" role="button">Home</a>
+    <a class="btn btn-primary btn-lg" href="{% url 'hammingtests:hammingtests_inform' %}" role="button">Hamming Test</a>
+    <a class="btn btn-primary btn-lg" href="{% url 'hammingtests:hammingtests_detail' %}" role="button">Hamming Test Database</a>
+</p>
+</div>
+{% endblock %}

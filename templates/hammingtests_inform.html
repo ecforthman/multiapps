@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="center"><h4 class="overlayTextProps">Hamming Test</h4></div>
+<div class="card center formClass">
+    <br>
+    <p class="recIdCustom">Enter strings of equal length to be compared</p>
+    <form action="{% url 'hammingtests:hammingtests_results' %}" method="post">
+        {% csrf_token %}
+        <!-- String A input -->
+        <div class="form-outline mb-4">
+            <input type="text" id="hamforminput1" name="string_A" value="{{source.string_B}}" class="form-control"
+                required />
+            <label class="form-label dataLabelCustom">String A</label>
+        </div>
+
+        <!-- String B input -->
+        <div class="form-outline mb-4">
+            <input type="text" id="hamforminput2" name="string_B" value="{{source.string_B}}" class="form-control"
+                required />
+            <label class="form-label dataLabelCustom">String B</label>
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" name=submit value="Calculate and Save"
+            class="btn btn-primary btn-block mb-4 dataLabelCustom">
+            Calculate and Save</button>
+    </form>
+</div>
+<div class="card">
+    <a class="btn btn-info" href="{% url 'home' %}" role="button">Home</a>
+</div>
+{% endblock %}

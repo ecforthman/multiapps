@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br><br>
+<div class="card center">
+
+    {% if latest_test_list %}
+
+    {% for item in latest_test_list %}
+    <div class="row recIdCustom">
+        <div class="col-md-2">Record ID:</div>
+        <div class="col-md-10">{{ item.id}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 dataLabelCustom">String A:</div>
+        <div class="col-md-10 middleColCustom">{{ item.string_A}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 dataLabelCustom">String B:</div>
+        <div class="col-md-10 middleColCustom">{{ item.string_B}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 dataLabelCustom">Distance:</div>
+        <div class="col-md-10 middleColCustom">{{ item.hdistance}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 dataLabelCustom">Timestamp:</div>
+        <div class="col-md-10 middleColCustom">{{ item.log_htest}}</div>
+    </div>
+    {% endfor %}
+
+    {% else %}
+    <div class="row recIdCustom">
+        <div class="col-md-6">There are no records to show</div>
+        <div class="col-md-6"></div>
+    </div>
+    {% endif %}
+</div>
+<div class="card">
+    <a class="btn btn-info" href="{% url 'hammingtests:hammingtests_index' %}" role="button">Hammingtest Home</a>
+</div>
+
+{% endblock %}

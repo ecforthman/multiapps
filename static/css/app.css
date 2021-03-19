@@ -1,0 +1,89 @@
+html { 
+    background-color:rgb(50, 123, 206);
+    background: url(../img/DSC06069.JPG) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; 
+    background-size: cover;
+    /*
+    height: 100%;
+    overflow: hidden;
+    */
+   }
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    color: #000000;
+    background-color: transparent;
+    /*
+    background-color: steelblue;
+    padding-top: 75px;
+    padding-bottom: 20px;
+    background-color: #CA9E6F;
+    margin: auto;
+    background-image: url(../img/DSC06069.JPG);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    */
+}
+.center{
+    text-align: center;
+}
+
+.navbarCustom{
+    /* background-color:rgba(66, 133, 209, 0.952); 
+    background-color:rgb(50, 123, 206);*/
+    background-color: transparent;
+}
+
+.formClass{
+    /* background-color: #6FB3CA; 
+    background-color: #252a2c; */
+    background-color: #CA9E6F;
+    padding: 10px;
+    color: #FFFFFF;
+    border-radius: 10px;  
+}
+
+.middleColCustom{
+    background-color: #FFD3A6;
+    color: #000000;
+    border: solid #7D5C39;
+    border-width:thin;
+}
+
+.recIdCustom{
+    background-color: #E65C39;
+    color: #FFFFFF;
+    font-weight: bold; 
+}
+
+.dataLabelCustom{
+    /* background-color: #5d60f5; 
+    background-color: #6FB3CA; */
+    background-color: #CA9E6F;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.textArea1{
+    height: 400px;
+
+}
+
+.overlayTextProps{
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.article-entry{
+    background-color:lightgray;
+    font-weight: bold;
+}
+
+.hamformin{
+    font-weight: bold;
+    width: 100%;
+}
+
+

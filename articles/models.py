@@ -20,6 +20,9 @@ class Article(models.Model):
     def get_absolute_url(self):
         return reverse('article_detail', args=[str(self.id)])
 
+    class Meta:
+        ordering = ('-date',)
+
 
 class Comment(models.Model): 
     article = models.ForeignKey(
@@ -32,7 +35,7 @@ class Comment(models.Model):
         get_user_model(),
         on_delete=models.CASCADE,
     )
-        
+
     def __str__(self):
         return self.comment
 

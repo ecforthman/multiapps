@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br><br>
+<div class="center">
+    <div class="row recIdCustom">
+        - The results have been saved to the database
+    </div>
+    <div class="row">
+        <div class="col-md-2 dataLabelCustom">String A:</div>
+        <div class="col-md-10 middleColCustom">{{str_a}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 dataLabelCustom">String B:</div>
+        <div class="col-md-10 middleColCustom">{{str_b}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 dataLabelCustom">Distance:</div>
+        <div class="col-md-10 middleColCustom">{{hdist}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 dataLabelCustom">Timestamp:</div>
+        <div class="col-md-10 middleColCustom">{{ts}}</div>
+    </div>
+</div>
+<div class="card">
+    <a class="btn btn-info" href="{% url 'hammingtests:hammingtests_index' %}" role="button">Hammingtest Home</a>
+</div>
+{% endblock %}
