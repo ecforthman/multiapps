@@ -2,3 +2,4 @@
 staticfiles
 .env
 *.sqlite3
+project_notes.txt
