@@ -15,10 +15,11 @@
   <div class="center"><h4 class="overlayTextProps">Articles</h4></div>
   {% for article in object_list%}
     <div class="card">
-      <div class="card-header formClass">
+      <div class="card-header formClass center">
         <span class="font-weight-bold">
           <a class="overlayTextProps" href="{% url 'article_detail' article.pk %}">{{ article.title }}</a>
         </span> &middot;
+      </br>
         <span class="text-muted"> {{ article.date }}</span>
         <!--span class="text-muted">by {{ article.author }} | {{ article.date }}</span--> 
         <!--span class="text-muted">
