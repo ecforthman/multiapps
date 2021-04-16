@@ -13,10 +13,11 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 import django_heroku
 import dj_database_url
-import environ
 
+import environ
 env = environ.Env()
-environ.Env.read_env()
+environ.Env.read_env(env_file='./.env')
+
 
 # env_file='../.env'
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -31,6 +32,7 @@ SECRET_KEY = env('secret_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+# DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = ["*"]
 
@@ -157,6 +159,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
+
