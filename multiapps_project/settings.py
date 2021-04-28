@@ -14,9 +14,9 @@ import os
 import django_heroku
 import dj_database_url
 
-import environ
-env = environ.Env()
-environ.Env.read_env()
+# import environ
+# env = environ.Env()
+# environ.Env.read_env()
 
 
 # env_file='../.env'
@@ -28,8 +28,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('secret_key')
-
+# SECRET_KEY = env('secret_key')
+SECRET_KEY = '6z=2$@23e*^1c4h4nz3ht2qb^0#2m@v!urcvr%jyrl&$$q1-us'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 # DEBUG = env('DEBUG')
