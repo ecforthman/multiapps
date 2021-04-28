@@ -1,4 +1,4 @@
 __pycache__
 staticfiles
-.env
+*.env
 project_notes.txt

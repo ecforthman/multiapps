@@ -14,9 +14,9 @@ import os
 import django_heroku
 import dj_database_url
 
-#import environ
-#env = environ.Env()
-#environ.Env.read_env(env_file='./.env')
+import environ
+env = environ.Env()
+environ.Env.read_env()
 
 
 # env_file='../.env'
@@ -28,8 +28,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = env.str('secret_key', 'dummy_secret_key')
-SECRET_KEY = '6z=2$@23e*^1c4h4nz3ht2qb^0#2m@v!urcvr%jyrl&$$q1-us'
+SECRET_KEY = env('secret_key')
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 # DEBUG = env('DEBUG')
@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'articles.apps.ArticlesConfig',
     'hammingtests.apps.HammingtestsConfig',
+    'ciphers.apps.CiphersConfig',
 ]
 
 MIDDLEWARE = [
@@ -100,9 +101,16 @@ DATABASES = {
         'USER': 'multitasker',
         'PASSWORD': 'too2manytasks',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT' : '5432',
     }
 }
+
+#NAME='multiappsdev'
+#USER='multitasker'
+#PASSWORD='too2manytasks'
+#HOST='localhost'
+#PORT='5432'
+
 
 
 # Password validation
