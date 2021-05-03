@@ -1,11 +1,17 @@
 html { 
-    background-color:rgb(50, 123, 206);
-    background: url(../img/DSC06069.JPG) no-repeat center center fixed; 
+    /*
+    background: url(../img/utahmountain1.JPG)  rgb(73, 153, 128) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover; 
     background-size: cover;
+    */
+    background: linear-gradient(rgb(50, 123, 206), rgb(73, 153, 128)) 
+                no-repeat center center fixed;
+    
     /*
+    background-color: rgb(73, 153, 128);
+    background-color:rgb(50, 123, 206);
     height: 100%;
     overflow: hidden;
     */
@@ -21,11 +27,9 @@ body {
     padding-bottom: 20px;
     background-color: #CA9E6F;
     margin: auto;
-    background-image: url(../img/DSC06069.JPG);
-    background-repeat: no-repeat;
-    background-size: cover; 
     */
 }
+
 .center{
     text-align: center;
 }
@@ -86,4 +90,12 @@ body {
     width: 100%;
 }
 
+.btn-mod{ 
+    border-style: solid; 
+    border-width: 3px;
+    border-color: #6f78ca;
+}
 
+.text-box-mod{
+    width: 100%;
+}

@@ -13,12 +13,13 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 import django_heroku
 import dj_database_url
-import environ
 
-env = environ.Env()
-environ.Env.read_env(env_file='.env')
+# import environ
+# env = environ.Env()
+# environ.Env.read_env()
 
 
+# env_file='../.env'
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 #PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -27,10 +28,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('secret_key')
+# SECRET_KEY = env('secret_key')
+SECRET_KEY = os.getenv('SECRET_KEY', 'Optional default value')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+
 
 ALLOWED_HOSTS = ["*"]
 
@@ -53,6 +56,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'articles.apps.ArticlesConfig',
     'hammingtests.apps.HammingtestsConfig',
+    'ciphers.apps.CiphersConfig',
 ]
 
 MIDDLEWARE = [
@@ -98,7 +102,7 @@ DATABASES = {
         'USER': 'multitasker',
         'PASSWORD': 'too2manytasks',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT' : '5432',
     }
 }
 
@@ -158,4 +162,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 django_heroku.settings(locals())
+
