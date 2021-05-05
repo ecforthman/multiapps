@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+<h3>Vigenere Cipher</h3>
+
+<p class="lead"> The Vigenere Cipher was introduced in  
+    	"A Treatise on Secret Writing" by Blaise de Vigenère in 1585.
+        This type of cipher is implemented using polyalphabetic substitution.    
+</p>
+<p class="lead"> This is presented as a computer science exercise. The cipher
+can be decoded relatively easily using a modern digital computer.
+</p>
+<p class="lead">Use the Create Message form to enter readable english
+            text, create a key phrase and a cipher offset value. 
+            Remember these parameters as they will allow you to retrieve 
+            the encoded message from the Message List.
+</p>
+<p class="lead">
+    <a class="btn btn-primary btn-mod ml-2" 
+        href="{% url 'home' %}" 
+        role="button">Home
+    </a>
+    <a class="btn btn-primary btn-mod ml-2" 
+        href="{% url 'ciphers:ciphers_encode' %}"   
+        role="button">Create Message 
+    </a>
+    <a class="btn btn-primary btn-mod ml-2" 
+        href="{% url 'ciphers:ciphers_list_docs' %}"   
+        role="button">Message List
+    </a>
+</p>
+</div>
+{% endblock %}

@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from ciphers.models import SavedDocs
+
+admin.site.register(SavedDocs)

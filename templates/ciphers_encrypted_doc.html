@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block head_title %}CIPHER SUCCESSFULLY ENCODED{% endblock %}
+
+{% block head_css %}{% endblock %}
+
+{% block head_javascript %}{% endblock %}
+
+{% block content %}
+
+<div class="card formClass">
+    <h4><b>Remember these values to access your message!</b></h4>
+    <h4>Keyword: {{ request.GET.key }}</h4>
+    <h4>Offset: {{ request.GET.offset }}</h4>
+    <a class="btn btn-light btn-mod ml-2" 
+        href="{% url 'ciphers:ciphers_list_docs' %}" 
+        role="button">Go to Message List
+    </a>
+</div>
+<div class="card">
+    <a class="btn btn-info" 
+        href="{% url 'ciphers:ciphers_index' %}" 
+        role="button">Back to Cipher Home
+    </a>
+    
+</div>
+
+{% endblock %}
+
+{% block footer_javascript %}{% endblock %}

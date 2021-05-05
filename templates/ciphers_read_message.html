@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block head_title %}CIPHER READ MESSAGE{% endblock %}
+
+{% block head_css %}{% endblock %}
+
+{% block head_javascript %}{% endblock %}
+
+{% block content %}
+
+<div class="card formClass">
+    <textarea id="output_decrypted_text" 
+            name="output_decrypted_text"
+            class="textArea1" readonly>{{ post_pass }}
+    </textarea>
+</div>
+<div class="card">
+    <a class="btn btn-info" 
+        href="{% url 'ciphers:ciphers_index' %}" 
+        role="button">Back to Cipher Home</a>
+</div>
+
+{% endblock %}
+
+{% block footer_javascript %}{% endblock %}
