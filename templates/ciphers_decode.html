@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block head_title %}CIPHER DECODE{% endblock %}
+
+{% block head_css %}{% endblock %}
+
+{% block head_javascript %}{% endblock %}
+
+{% block content %}
+
+    <div class="card formClass">
+        <h4>Enter keyword and offset to read message</h4>
+        <form id="read-message-form" name="read-message-form"
+                action="{% url 'ciphers:ciphers_read_message' %}" method="post">
+                {% csrf_token %}
+                {{form|crispy}}
+            <input type="submit" title="submit" value="Decode" 
+            class="btn btn-warning btn-mod ml-2"></input>
+        </form>
+    </div>
+    <div class="card">
+        <a class="btn btn-info" 
+            href="{% url 'ciphers:ciphers_index' %}" 
+            role="button">Back to Cipher Home</a>
+    </div>
+
+{% endblock %}
+
+{% block footer_javascript %}{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block head_title %}CIPHER ENCODE{% endblock %}
+
+{% block head_css %}{% endblock %}
+
+{% block head_javascript %}{% endblock %}
+
+{% block content %}
+
+<div>   
+    <h4 class="overlayTextProps center">Create Message</h4>
+    <form class="formClass" method="post" novalidate> 
+        {% csrf_token %}
+        {{ form|crispy }}
+        <!--input type="submit" title="submit" value="Encode and Save" class="button"></input-->
+        <button class="btn btn-success btn-mod ml-2" type="submit">
+        Encode and Save</button>
+    </form>
+</div>
+<div class="card">
+    <a class="btn btn-info" 
+        href="{% url 'ciphers:ciphers_index' %}" 
+        role="button">Back to Cipher Home</a>
+</div>
+
+{% endblock %}
+
+{% block footer_javascript %}{% endblock %}

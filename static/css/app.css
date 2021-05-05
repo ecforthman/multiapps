@@ -72,7 +72,7 @@ body {
 
 .textArea1{
     height: 400px;
-
+    padding: 10px;
 }
 
 .overlayTextProps{
@@ -98,4 +98,8 @@ body {
 
 .text-box-mod{
     width: 100%;
+}
+
+.asteriskField {
+    display: none;
 }

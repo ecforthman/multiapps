@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block head_title %}LIST ENCRYPTED DOCUMENTS{% endblock %}
+
+{% block head_css %}{% endblock %}
+
+{% block head_javascript %}{% endblock %}
+
+{% block content %}
+
+<h4 class="overlayTextProps center">Cipher Message List</h4>
+<div class="card formClass">
+{% if encrypted_docs %}
+    {% for item in encrypted_docs %}
+        <form id="decode-form" name="decode-form" 
+            action="{% url 'ciphers:ciphers_decode' %}"
+            method="post" class="formClass">
+        {% csrf_token %}
+        <div class="row recIdCustom">Message {{item.id}}: 
+            <input type="submit" name="submit" value="Decode" 
+            class="recIdCustom btn btn-sm btn-warning">
+            </input>
+        </div>
+        <div class="row dataLabelCustom">Title: {{item.title}}</div>
+        <div class="row dataLabelCustom">Author: {{item.author}}</div>
+        <div class="row dataLabelCustom">Date: {{item.date_submitted}}</div>
+        <input type="hidden" name="record_number" value="{{item.id}}"></input>
+        </form>
+    {% endfor %}
+{% else %}
+    <div class="card center dataLabelCustom">There are no records to show</div>
+{% endif %}
+</div>
+<div class="card">
+    <a class="btn btn-info" 
+        href="{% url 'ciphers:ciphers_index' %}" 
+        role="button">Back to Cipher Home</a>
+</div>
+
+{% endblock %}
+
+{% block footer_javascript %}{% endblock %}
+
