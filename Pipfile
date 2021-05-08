@@ -16,4 +16,4 @@ django-crispy-forms = "*"
 django-environ = "*"
 
 [requires]
-python_version = "3.7.6"
+python_version = "3.7.10"
